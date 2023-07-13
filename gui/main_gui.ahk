@@ -11,6 +11,7 @@ SetWorkingDir, %A_ScriptDir%
 #Include ./features/lat_the_bai.ahk
 #Include ./features/danh_boss.ahk
 #Include ./features/danh_phu_ban.ahk
+#Include ./features/danh_chien_truong.ahk
 
 _main_gui(){
     gui_width := 266
@@ -23,9 +24,10 @@ _main_gui(){
     _gui_button("TSHT", 0, 170, "TSHT")
     _gui_button("Cường Hóa", first_elementX, first_elementY, "cuong_hoa")
     _gui_button("Đấu Trường", first_elementX + 85, first_elementY, "dau_truong")
-    _gui_button("Lật Bài", first_elementX + 85 + 85, first_elementY, "lat_the_bai")
+    _gui_button("Lật Bài", first_elementX + 85 * 2, first_elementY, "lat_the_bai")
     _gui_button("Đánh Boss", first_elementX, first_elementY + 30, "danh_boss")
     _gui_button("Tấn Công", first_elementX + 85, first_elementY + 30, "danh_phu_ban")
+    _gui_button("Chiến Trường", first_elementX + 85 * 2, first_elementY + 30, "chien_truong")
     global count_value := 0
     _gui_input(0, 0, 50, 20, "count_value")
 
@@ -54,6 +56,11 @@ _main_gui(){
     danh_boss:
         isRunning_state := 1
         _danh_boss()
+    Return
+
+    chien_truong:
+        isRunning_state := 1
+        _danh_chien_truong()
     Return
 
     danh_phu_ban:

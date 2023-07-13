@@ -4,7 +4,7 @@ SetWorkingDir, %A_ScriptDir%
 
 #Include ./services/danh_chien_truong_service.ahk
 
-_danh_boss(){
+_danh_chien_truong(){
     MsgBox, Wait For Arena
     while(True){
         if(isRunning_state == 0){
@@ -31,7 +31,7 @@ _danh_boss(){
             danh_chien_truong_start()
             While(True){
                 isBattleRound2End := current_time >= "21:00" && current_time <= "21:03"
-                if(isBattleRound1End){
+                if(isBattleRound2End){
                     danh_chien_truong_exit()
                     break
                 }
@@ -39,11 +39,8 @@ _danh_boss(){
             }
         }
 
-        if(isBossRong == 1 || isBossKraken == 1 || isBossOar == 1)
-        {
-            danh_boss_Start()
-            wait_for_boss := 5 * one_minute
-            Sleep, %wait_for_boss%
+        if(isBattleRound2End){
+            break
         }
         Sleep, 1000
     }
