@@ -14,7 +14,11 @@ lat_the_bai_start(){
             Break
         }
         _game_clicker(639, 361)
-        Sleep, 1500
+        Sleep, 2000
         _game_clicker(553, 510)
+        Sleep, 500
     }
+    _game_clicker(715, 508)
+    Sleep, 1000
+    _game_clicker(877, 121)
 }

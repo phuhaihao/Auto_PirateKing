@@ -9,9 +9,9 @@ SetWorkingDir, %A_ScriptDir%
 #Include ./features/cuong_hoa.ahk
 #Include ./features/dau_truong.ahk
 #Include ./features/lat_the_bai.ahk
-#Include ./features/danh_boss.ahk
+#Include ./features/daily_activity/daily_activity.ahk
 #Include ./features/danh_phu_ban.ahk
-#Include ./features/danh_chien_truong.ahk
+#Include ./features/login_game.ahk
 
 _main_gui(){
     gui_width := 266
@@ -23,11 +23,8 @@ _main_gui(){
     _gui_button("Dừng", 100, 170, "stop_program")
     _gui_button("TSHT", 0, 170, "TSHT")
     _gui_button("Cường Hóa", first_elementX, first_elementY, "cuong_hoa")
-    _gui_button("Đấu Trường", first_elementX + 85, first_elementY, "dau_truong")
-    _gui_button("Lật Bài", first_elementX + 85 * 2, first_elementY, "lat_the_bai")
-    _gui_button("Đánh Boss", first_elementX, first_elementY + 30, "danh_boss")
-    _gui_button("Tấn Công", first_elementX + 85, first_elementY + 30, "danh_phu_ban")
-    _gui_button("Chiến Trường", first_elementX + 85 * 2, first_elementY + 30, "chien_truong")
+    _gui_button("Đấu Trường Lật Bài", first_elementX + 85 , first_elementY , "dau_truong_lat_bai")
+    _gui_button("Hoạt Động", first_elementX + 82 * 2, first_elementY, "daily_activity")
     global count_value := 0
     _gui_input(0, 0, 50, 20, "count_value")
 
@@ -43,30 +40,15 @@ _main_gui(){
         _cuong_hoa(count_Value)
     return
 
-    dau_truong:
+    dau_truong_lat_bai:
         isRunning_state := 1
         _dau_truong()
+        _lat_the_bai()
     return
 
-    lat_the_bai:
+    daily_activity:
         isRunning_state := 1
-        _lat_the_bai()
-    Return
-
-    danh_boss:
-        isRunning_state := 1
-        _danh_boss()
-    Return
-
-    chien_truong:
-        isRunning_state := 1
-        _danh_chien_truong()
-    Return
-
-    danh_phu_ban:
-        isRunning_state := 1
-        GuiControlGet, count_Value
-        _danh_phu_ban(count_Value)
+        _daily_activity()
     Return
 
     TSHT:

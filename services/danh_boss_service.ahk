@@ -11,3 +11,8 @@ danh_boss_Start(){
     Sleep, 5000
     _game_clicker(547, 170, 20)
 }
+
+danh_boss_exit(){
+    _game_clicker(635, 473)
+    Sleep, 5000
+}

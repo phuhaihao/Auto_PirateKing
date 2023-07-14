@@ -15,12 +15,7 @@ _mua_luot_dau_truong(){
 }
 
 _danh_dau_truong(){
-    count := 0
-    While, True{
-        if(count == 100){
-            _game_clicker(1206, 62)
-            Break
-        }
+    Loop, 100{
         if(isRunning_state == 0){
             Break
         }
@@ -30,6 +25,7 @@ _danh_dau_truong(){
         Sleep, 2000
         _game_clicker(677, 501)
         Sleep, 2000
-        count++
-    } 
+    }
+    _game_clicker(1206, 62)
+    Sleep, 1000
 }

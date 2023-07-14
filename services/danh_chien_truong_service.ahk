@@ -7,17 +7,15 @@ SetWorkingDir, %A_ScriptDir%
 danh_chien_truong_start(){
     _game_clicker(1224, 569)
     Sleep, 5000
-    ; click to auto attack
-    _game_clicker(1224, 569)
+    _game_clicker(321, 289)
 }
 
 danh_chien_truong_auto_reborn(){
-    _game_clicker(1224, 569)
+    _game_clicker(310, 242)
     Sleep, 1000
 }
 
 danh_chien_truong_exit(){
-    ; exit chien truong
-    _game_clicker(1224, 569)
+    _game_clicker(646, 486)
     Sleep, 1000
 }
