@@ -8,6 +8,8 @@ SetWorkingDir, %A_ScriptDir%
 #Include ./features/login_game.ahk
 
 _daily_activity(){
+    content := Utf8Encode("Đã Bật Hoạt Động Nhen!!!!!")
+    MsgBox, 0, , %content%, 5
     While(true){
 
         if(isRunning_state == 0){
@@ -23,6 +25,13 @@ _daily_activity(){
         guildPartyTime := current_time >= "20:30" && current_time <= "20:33"
         bossKrakenTime := current_time >= "21:00" && current_time <= "21:03"
         bossOarTime := current_time >= "22:00" && current_time <= "22:03"
+
+        openGameTime1 := current_time >= "15:20" && current_time <= "15:21"
+
+        if(openGameTime1 && PID == 0)
+        {
+            _login_game()
+        }
 
         if(bossDragonTime || bossKrakenTime || bossOarTime){
             _danh_boss()

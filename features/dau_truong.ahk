@@ -17,6 +17,10 @@ _dau_truong(){
     _mua_luot_dau_truong()
     _danh_dau_truong()
     return
+    IfMsgBox Yes
+    _mua_luot_dau_truong()
+    _danh_dau_truong()
+    return
     IfMsgBox No
     _danh_dau_truong()
     return

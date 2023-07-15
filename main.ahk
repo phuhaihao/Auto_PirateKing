@@ -32,12 +32,6 @@ _main(){
     WinMove, %win_title%, , , , 1276, 699
     Gdip_Startup()
     _main_gui()
-    Process Exist, %win_title%.exe
-    PID := ErrorLevel
-
-    if(PID == 0){
-        _login_game()
-    }
 }
 
 _main()

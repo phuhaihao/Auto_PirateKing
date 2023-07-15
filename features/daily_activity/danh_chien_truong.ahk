@@ -12,7 +12,6 @@ _danh_chien_truong(){
         FormatTime, current_time, A_now, HH:mm
         isBattleRound1 := current_time >= "19:45" && current_time <= "19:46"
         isBattleRound2 := current_time >= "20:05" && current_time <= "20:06"
-        isBattleRound2End := current_time >= "20:20" && current_time <= "20:21"
 
         if(isBattleRound1){
             danh_chien_truong_start()
@@ -29,7 +28,7 @@ _danh_chien_truong(){
         if(isBattleRound2){
             danh_chien_truong_start()
             While(True){
-                isBattleRound2End := current_time >= "20:20" && current_time <= "20:21"
+                isBattleRound2End := current_time >= "20:20" && current_time <= "20:25"
                 if(isBattleRound2End){
                     danh_chien_truong_exit()
                     break
@@ -38,6 +37,7 @@ _danh_chien_truong(){
             }
         }
 
+        isBattleRound2End := current_time >= "20:20" && current_time <= "20:25"
         if(isBattleRound2End){
             break
         }

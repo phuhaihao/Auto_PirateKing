@@ -8,4 +8,5 @@ _danh_boss(){
     danh_boss_Start()
     wait_for_boss := 15 * one_minute
     Sleep, %wait_for_boss%
+    danh_boss_exit()
 }
